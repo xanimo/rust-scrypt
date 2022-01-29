@@ -13,7 +13,7 @@ license = "Apache-2.0"
 travis-ci = { repository = "r8d8/rust-crypto" }
 
 [build-dependencies]
-gcc = "0.3"
+cc = "1.0.72"
 
 [dependencies]
 clippy = {version = "0.0", optional = true}

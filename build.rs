@@ -1,12 +1,13 @@
-extern crate gcc;
+extern crate cc;
 use std::env;
 use std::path::PathBuf;
 
 fn main() {
     let out_path = PathBuf::from(env::var("OUT_DIR").unwrap());
 
-    gcc::Build::new()
+    cc::Build::new()
         .flag("-std=c99")
+        .define("WINDOWS_OS", None)
         .include("ext/scrypt")
         .file("ext/scrypt/crypto_scrypt.c")
         .file("ext/scrypt/crypto_scrypt_smix.c")
