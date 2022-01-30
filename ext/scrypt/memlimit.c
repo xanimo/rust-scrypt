@@ -46,7 +46,12 @@
 #include <errno.h>
 #include <stddef.h>
 #include <stdint.h>
-#include <unistd.h>
+#if defined(HAVE_UNISTD_H)
+    #include <unistd.h>
+#endif
+#if defined(HAVE_IO_H)
+    #include <io.h>
+#endif
 
 #ifdef DEBUG
 #include <stdio.h>

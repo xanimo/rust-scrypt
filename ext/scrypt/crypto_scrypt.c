@@ -30,7 +30,9 @@
 
 #include <sys/types.h>
 #if !defined(WINDOWS_OS)
- 	#include <sys/mman.h>
+	#if defined(HAVE_SYS_MMAN_H)
+		#include <sys/mman.h>
+	#endif
  	#ifndef HAVE_MMAP
 		#define HAVE_MMAP 1
  	#endif

@@ -30,7 +30,13 @@
 #define _CRYPTO_SCRYPT_H_
 
 #include <stdint.h>
-#include <unistd.h>
+
+#if defined(HAVE_UNISTD_H)
+    #include <unistd.h>
+#endif
+#if defined(HAVE_IO_H)
+    #include <io.h>
+#endif
 
 /**
  * crypto_scrypt(passwd, passwdlen, salt, saltlen, N, r, p, buf, buflen):
